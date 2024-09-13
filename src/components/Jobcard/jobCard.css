@@ -1,86 +1,105 @@
 .job-list {
-    margin-top: 20px; /* Margin for spacing */
-    height: calc(100vh - 60px); /* Full viewport height minus the height of the nav */
-    overflow-y: auto; /* Vertical scrolling only */
-    padding-right: 10px; /* Space for the scrollbar */
-  }
-  
-  .job-card {
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 8px;
-    background-color: #fff;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between; /* Distribute space between job info and button */
-    align-items: center; /* Center items vertically */
-    margin: 10px;
-  }
-  
-  .job-info {
-    flex: 1; /* Allow job-info to take up available space */
-  }
-  
-  .job-title {
-    font-size:18px;
-    margin: 0;
-    text-align: center;
-    font-weight: 500;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+  margin-top: 20px;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+  padding-right: 10px;
+}
 
+.job-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+@media (min-width: 600px) {
+  .job-card {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
   }
-  
-  .job-salary {
-    font-size: 15px;
-    margin: 5px 0;
-     text-align: center;
-     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
+  .job-info {
+    flex: 1;
   }
-  
-  .job-location {
-    font-size: 15px;
-    margin: 5px 0;
-    text-align: center;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
+  .image {
+    height: 120px;
+    width: 130px;
   }
-  
-  .job-phone {
-    font-size: 15px;
-    margin: 5px 0;
-    text-align: center;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-  }
-  
-  .location {
-    font-size: 15px;
-    margin-right: 7px;
-    margin-top: 3px;
-  }
-  
+
   .add-button {
-    background: #fbca1f;
-    font-family: inherit;
-    width: 80px;
-    font-weight: 700;
-    font-size: 18px;
-    border: 3px solid black;
-    border-radius: 0.4em;
-    box-shadow: 0.1em 0.1em;
-    cursor: pointer;
-    height: 40px;
+    width: 100px;
+    height: 45px;
   }
-  
-  .add-button:hover {
-    transform: translate(-0.05em, -0.05em);
-    box-shadow: 0.15em 0.15em;
+}
+
+.job-title,
+.job-salary,
+.job-location,
+.job-phone {
+  font-size: 16px;
+  margin: 5px 0;
+  text-align: left;
+}
+
+.add-button {
+  background: #fbca1f;
+  font-family: inherit;
+  width: 80px;
+  font-weight: 700;
+  font-size: 16px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+  cursor: pointer;
+  height: 35px;
+}
+
+.add-button:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+}
+
+.add-button:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
+}
+
+.image {
+  height: 100px;
+  width: 110px;
+}
+
+@media (max-width: 599px) {
+  .job-card {
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
-  
-  .add-button:active {
-    transform: translate(0.05em, 0.05em);
-    box-shadow: 0.05em 0.05em;
+
+  .job-title,
+  .job-salary,
+  .job-location,
+  .job-phone {
+    font-size: 14px;
+    text-align: center;
   }
-  
- .image{
-    height:120px;
-    width:130px;
- }
+
+  .image {
+    height: 80px;
+    width: 90px;
+  }
+
+  .add-button {
+    width: 70px;
+    height: 30px;
+    font-size: 14px;
+  }
+}

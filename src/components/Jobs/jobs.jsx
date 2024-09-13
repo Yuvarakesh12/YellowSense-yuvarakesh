@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import JobCard from '../Jobcard/JobCard';
-import './index.css'; // Ensure this CSS file exists
-
+import './index.css';
+import { FaBookmark } from "react-icons/fa";
 const Jobs = () => {
   const [jobs, setJobs] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -10,8 +10,8 @@ const Jobs = () => {
   const [bookmarkedJobs, setBookmarkedJobs] = useState([]);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
-  const [loading, setLoading] = useState(false); // Add loading state
-  const [showLoader, setShowLoader] = useState(true); // State to manage loader visibility
+  const [loading, setLoading] = useState(false); 
+  const [showLoader, setShowLoader] = useState(true); 
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -51,7 +51,6 @@ const Jobs = () => {
       } catch (error) {
         setError(error.message);
       } finally {
-        // Hide loader after 3 seconds
         setTimeout(() => {
           setLoading(false);
           setShowLoader(false);
@@ -112,14 +111,17 @@ const Jobs = () => {
 
   return (
     <div className="main-container">
-      <nav className="nav-container">
+       <nav className="nav-container">
+      <div className="nav-left">
         <img
           className="logo"
           src="https://res.cloudinary.com/ds5ooz2ve/image/upload/v1726058487/unnamed_lfeczo.png"
           alt="Logo"
         />
         <h1 className="heading">LOKAL JOBS</h1>
-      </nav>
+      </div>
+      
+    </nav>
       <div className="primary-container">
         <div className="sub-container-1">
          
@@ -136,7 +138,7 @@ const Jobs = () => {
             <button className="load"
            
             onClick={() => setPage(prevPage => prevPage + 1)}
-            disabled={loading || !hasMore} // Disable button while loading or no more data
+            disabled={loading || !hasMore} 
           >
             Load More
           </button>
@@ -269,7 +271,7 @@ const Jobs = () => {
               <label htmlFor="sortBy">Sort By:</label>
               <select
                 id="sortBy"
-                onChange={(e) => {/* Add sorting functionality here */}}
+                onChange={(e) => {}}
               >
                 <option value="date">Date Posted</option>
                 <option value="salary">Salary</option>

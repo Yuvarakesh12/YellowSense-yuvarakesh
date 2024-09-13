@@ -12,15 +12,15 @@ const JobCard = ({ job, onAddToBookmarks, onRemoveFromBookmarks, isBookmarked })
       <div className="job-info">
         <p className="job-title">{title}</p>
         <p className="job-location">
-          <FaLocationDot className="icon" aria-label="Location" />
+          <FaLocationDot className="location" aria-label="Location" />
           {jobLocation}
         </p>
         <p className="job-salary">
-          <FaRupeeSign className="icon" aria-label="Salary" />
+          <FaRupeeSign className="location" aria-label="Salary" />
           {salaryMin} - {salaryMax}
         </p>
         <p className="job-phone">
-          <FaPhone className="icon" aria-label="Phone" />
+          <FaPhone className="location" aria-label="Phone" />
           {phoneData}
         </p>
       </div>

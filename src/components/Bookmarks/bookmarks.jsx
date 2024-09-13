@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import JobCard from '../Jobcard/JobCard';
-import './bookmarks.css'; // Ensure this CSS file exists
+import './bookmarks.css'; 
 
 const Bookmarks = () => {
   const [bookmarkedJobs, setBookmarkedJobs] = useState([]);
