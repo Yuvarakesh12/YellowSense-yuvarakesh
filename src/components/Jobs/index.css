@@ -1,0 +1,205 @@
+/* Ensure the nav is fixed at the top and use Flexbox for layout */
+.nav-container {
+  position: fixed; /* Keeps the navbar fixed at the top */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width of the viewport */
+  padding: 10px; /* Space around items */
+  display: flex; /* Use Flexbox for layout */
+  align-items: center; /* Vertically center items */
+  justify-content: center; /* Center items horizontally */
+  z-index: 1000; /* Ensures it is on top of other content */
+  background-color: black;
+}
+
+/* Style for the h1 element */
+.heading {
+  font-size: 30px; /* Set font size */
+  margin: 0; /* Remove default margin */
+  text-align: center; /* Center align text */
+  -webkit-background-clip: text; /* Clip background to text */
+  -webkit-text-fill-color: transparent; /* Make the text color transparent to show gradient */
+  background: linear-gradient(to right, #f9c100, #f5ecc5); /* Linear gradient for other browsers */
+  background-clip: text; /* Clip background to text */
+  color: transparent; /* Ensure text color is transparent */
+  font-family: 'Fjalla One', sans-serif;
+}
+
+.main-container {
+  padding-top: 60px; /* Space for the fixed navbar */
+}
+
+.primary-container {
+  display: flex;
+  flex-direction: row; /* Ensure children are aligned horizontally */
+  gap: 20px; /* Space between sub-containers */
+}
+
+.sub-container-1 {
+  width: 70%;
+  overflow: hidden; /* Hide overflow within this container */
+  position: relative; /* Ensure the loader can be positioned absolutely within it */
+}
+
+.loader-wrapper {
+  position: absolute; /* Positioning for centering */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Offset by half of its own dimensions */
+  display: flex; /* Flexbox for centering the loader */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  width: 100%; /* Full width of the parent container */
+  height: 100%; /* Full height of the parent container */
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+.input {
+  border-radius: 10px;
+  outline: 2px solid #FEBF00;
+  border: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #e2e2e2;
+  outline-offset: 3px;
+  padding: 10px 1rem;
+  transition: 0.25s;
+  width: calc(100% - 20px); /* Adjust width for margin */
+  margin: 10px;
+}
+
+.input:focus {
+  outline-offset: 5px;
+  background-color: #fff;
+}
+
+.filter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.checkbox-group,
+.radio-group,
+.dropdown-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checkbox-group label,
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox-group input[type="checkbox"],
+.radio-group input[type="radio"] {
+  accent-color: #007bff; /* Custom color for inputs (optional) */
+}
+
+.radio-group span {
+  font-weight: bold;
+}
+
+.dropdown-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dropdown-group label {
+  margin-right: 10px;
+}
+
+select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Style for the filter header */
+.filter-header {
+  display: flex;
+  justify-content: flex-end; /* Align children to the right end */
+  margin-bottom: 30px;
+}
+
+.clear-button {
+  background-color: #f9c100; /* Bright color for visibility */
+  color: white;
+  border: none; /* Remove default border */
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.clear-button:hover {
+  background-color: #e0a900; /* Slightly darker color on hover */
+}
+
+/* Style for the custom loader */
+.custom-loader {
+  width: 70px;
+  height: 70px;
+  background: #ffa600;
+  border-radius: 50px;
+  -webkit-mask: radial-gradient(circle 31px at 50% calc(100% + 13px),#000 95%,#0000) top 4px left 50%,
+    radial-gradient(circle 31px,#000 95%,#0000) center,
+    radial-gradient(circle 31px at 50% -13px,#000 95%,#0000) bottom 4px left 50%,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  -webkit-mask-repeat: no-repeat;
+  animation: cu10 1.5s infinite;
+}
+
+@keyframes cu10 {
+  0% {
+    -webkit-mask-size: 0    18px,0    18px,0    18px,auto;
+  }
+
+  16.67% {
+    -webkit-mask-size: 100% 18px,0    18px,0    18px,auto;
+  }
+
+  33.33% {
+    -webkit-mask-size: 100% 18px,100% 18px,0    18px,auto;
+  }
+
+  50% {
+    -webkit-mask-size: 100% 18px,100% 18px,100% 18px,auto;
+  }
+
+  66.67% {
+    -webkit-mask-size: 0    18px,100% 18px,100% 18px,auto;
+  }
+
+  83.33% {
+    -webkit-mask-size: 0    18px,0    18px,100% 18px,auto;
+  }
+
+  100% {
+    -webkit-mask-size: 0    18px,0    18px,0    18px,auto;
+  }
+}
+.load-more-button{
+  text-align:end;
+
+}
+
+.load{
+  background: #fbca1f;
+  font-family: inherit;
+  width: 80px;
+  font-weight: 700;
+  font-size: 18px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+  cursor: pointer;
+  height: 30px;
+  width:150px;
+  margin:10px;
+}

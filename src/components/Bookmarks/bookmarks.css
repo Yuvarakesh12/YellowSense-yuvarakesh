@@ -1,0 +1,68 @@
+.nav-container {
+    position: fixed; /* Keeps the navbar fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width of the viewport */
+    padding: 10px; /* Set background color if needed */
+    display: flex; /* Use Flexbox for layout */
+    align-items: center; /* Vertically center items */
+    justify-content: center; /* Center items horizontally */
+    z-index: 1000; /* Ensures it is on top of other content */
+    background-color: black;
+  }
+  
+  /* Additional wrapper for centering text properly */
+  .nav-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Optional: Limit width to prevent stretching */
+    padding: 0 10px; /* Padding to align content inside the nav */
+  }
+  
+  /* Style for the logo image */
+  .logo {
+    height: 40px; /* Set height of the logo */
+    width: 80px; /* Set width of the logo */
+    position: absolute; /* Absolute positioning for the logo */
+    left: 10px; /* Space from the left edge */
+  }
+  
+  /* Style for the h1 element */
+  .heading{
+    font-size: 30px; /* Set font size */
+    margin: 0; /* Remove default margin */
+    text-align: center; /* Center align text */
+    -webkit-background-clip: text; /* Clip background to text */
+    -webkit-text-fill-color: transparent; /* Make the text color transparent to show gradient */
+    background: linear-gradient(to right, #f9c100  ,#f5ecc5  ); /* Linear gradient for other browsers */
+    background-clip: text; /* Clip background to text */
+    color: transparent; /* Ensure text color is transparent */
+    font-family: 'Fjalla One', sans-serif;
+  
+  
+  
+  
+  }
+.bookmarks-list{
+    margin-top: 20px; /* Margin for spacing */
+    height: calc(100vh - 60px); /* Full viewport height minus the height of the nav */
+    overflow-y: auto; /* Vertical scrolling only */
+    padding-right: 10px; /* Space for the scrollbar */
+  }
+  .bookmarks-container{
+    padding:30px;
+  }
+
+  .nodata{
+    height:500px;
+    width:500px;
+  }
+
+  .error-container{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    height:100vh;
+  }
